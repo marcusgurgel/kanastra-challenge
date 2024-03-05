@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+    api:
+        image: backend-cobranca-em-lote-app:latest  
+        build: ./api
+        ports:
+            - '8000:8000'
+        volumes:
+            - '${PWD}/files:/app/files'
+    web:
+        image: frontend-cobranca-em-lote-app:latest
+        build: ./frontend
+        ports:
+            - '8888:8888'
